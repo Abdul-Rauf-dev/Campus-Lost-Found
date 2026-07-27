@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Lost &amp; Found — IUB</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Top navigation ── -->
+  <nav class="topnav">
+    <div class="nav-wrap">
+      <div class="brand">
+        <span class="brand-icon">📍</span>
+        <span class="brand-text">Campus Lost &amp; Found</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="active">Browse</a>
+        <a href="admin.html">Admin</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- ── Hero strip ── -->
+    <section class="hero">
+      <h1>Lost something? Found something?</h1>
+      <p>Help bring it back to its owner. Browse recent reports or post your own.</p>
+    </section>
+
+    <!-- ── Two-column layout ── -->
+    <div class="layout">
+
+      <!-- LEFT: Submit form -->
+      <aside class="form-panel">
+        <h2>Post a Report</h2>
+
+        <form id="report-form" novalidate>
+
+          <!-- Lost / Found toggle -->
+          <div class="field">
+            <label>What happened?</label>
+            <div class="toggle-row">
+              <label class="toggle">
+                <input type="radio" name="type" value="lost" checked />
+                <span class="toggle-pill lost">I lost something</span>
+              </label>
+              <label class="toggle">
+                <input type="radio" name="type" value="found" />
+                <span class="toggle-pill found">I found something</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="title">Item title</label>
+            <input type="text" id="title" placeholder="e.g. Black backpack" />
+          </div>
+
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category">
+              <option value="">-- Select category --</option>
+              <option value="electronics">Electronics</option>
+              <option value="books">Books &amp; Stationery</option>
+              <option value="cards">ID &amp; Cards</option>
+              <option value="keys">Keys</option>
+              <option value="bags">Bags &amp; Clothing</option>
+              <option value="accessories">Accessories</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="e.g. Library, 2nd floor" />
+          </div>
+
+          <div class="field">
+            <label for="description">Description</label>
+            <textarea id="description" rows="3" placeholder="Color, brand, distinctive marks..."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="contact">Contact (email or phone)</label>
+            <input type="text" id="contact" placeholder="you@iub.edu.pk" />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit Report</button>
+        </form>
+      </aside>
+
+      <!-- RIGHT: Filter + Reports list -->
+      <section class="reports-panel">
+
+        <div class="filter-bar">
+          <div class="filter-group">
+            <button class="chip active" data-type="all">All</button>
+            <button class="chip chip-lost"  data-type="lost">Lost</button>
+            <button class="chip chip-found" data-type="found">Found</button>
+          </div>
+
+          <select id="category-filter" class="filter-select">
+            <option value="">All categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="books">Books &amp; Stationery</option>
+            <option value="cards">ID &amp; Cards</option>
+            <option value="keys">Keys</option>
+            <option value="bags">Bags &amp; Clothing</option>
+            <option value="accessories">Accessories</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div id="status-msg" class="status-msg"></div>
+        <div id="reports-list" class="reports-grid"></div>
+
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

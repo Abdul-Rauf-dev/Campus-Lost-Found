@@ -1,0 +1,446 @@
+/* ================================================================
+   Campus Lost & Found — style.css
+   Palette: Modern Sage & Coral
+   ================================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --deep-sage: #2d5042;
+  --sage: #87a878;
+  --coral: #e8704c;
+  --brick: #b33a3a;
+  --cream: #f7f4ed;
+  --text: #3d3d3d;
+  --muted: #7a7568;
+  --border: #ddd8cc;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ── Top navigation ─────────────────────────────────────── */
+.topnav {
+  background: var(--deep-sage);
+  color: var(--white);
+  padding: 14px 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+.topnav-admin {
+  background: #1f3a2e;
+}
+
+.nav-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand-icon {
+  font-size: 22px;
+}
+.brand-text {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+}
+.nav-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.nav-links a.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+/* ── Container & hero ──────────────────────────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+.hero {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--coral);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: 20px;
+  color: var(--deep-sage);
+  margin-bottom: 4px;
+}
+.hero p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ── Two-column layout (user page) ─────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 20px;
+}
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Form panel ────────────────────────────────────────── */
+.form-panel,
+.reports-panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+.form-panel h2,
+.reports-panel h2 {
+  font-size: 16px;
+  color: var(--deep-sage);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+.field {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+}
+.field label {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  outline: none;
+  background: var(--white);
+  color: var(--text);
+  transition: border-color 0.2s;
+  width: 100%;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--coral);
+}
+textarea {
+  resize: vertical;
+}
+
+/* ── Toggle pills (lost/found) ─────────────────────────── */
+.toggle-row {
+  display: flex;
+  gap: 8px;
+}
+.toggle {
+  flex: 1;
+  cursor: pointer;
+}
+.toggle input {
+  display: none;
+}
+.toggle-pill {
+  display: block;
+  padding: 10px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  transition: all 0.2s;
+  background: var(--cream);
+  white-space: nowrap;
+}
+.toggle input:checked + .toggle-pill.lost {
+  background: var(--coral);
+  color: white;
+  border-color: var(--coral);
+}
+.toggle input:checked + .toggle-pill.found {
+  background: var(--sage);
+  color: white;
+  border-color: var(--sage);
+}
+
+/* ── Buttons ───────────────────────────────────────────── */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.1s;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-primary {
+  background: var(--coral);
+  color: white;
+  width: 100%;
+}
+.btn-resolve {
+  background: var(--sage);
+  color: white;
+}
+.btn-delete {
+  background: var(--brick);
+  color: white;
+}
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* ── Filter bar ────────────────────────────────────────── */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.filter-group {
+  display: flex;
+  gap: 6px;
+}
+.chip {
+  padding: 7px 14px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text);
+  transition: all 0.2s;
+}
+.chip:hover {
+  border-color: var(--deep-sage);
+}
+.chip.active {
+  background: var(--deep-sage);
+  color: white;
+  border-color: var(--deep-sage);
+}
+.filter-select {
+  padding: 7px 12px;
+  font-size: 13px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* ── Reports grid ──────────────────────────────────────── */
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.admin-grid {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+/* ── Report card ───────────────────────────────────────── */
+.report-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+.report-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.report-card.lost {
+  border-top: 3px solid var(--coral);
+}
+.report-card.found {
+  border-top: 3px solid var(--sage);
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-lost {
+  background: #fdeee7;
+  color: var(--coral);
+}
+.badge-found {
+  background: #e8f1e2;
+  color: var(--deep-sage);
+}
+.badge-open {
+  background: #fff4e0;
+  color: #b07105;
+}
+.badge-resolved {
+  background: #e8f1e2;
+  color: var(--deep-sage);
+}
+.badge-cat {
+  background: #f0ede3;
+  color: var(--muted);
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.card-meta {
+  font-size: 11.5px;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.card-meta strong {
+  color: var(--text);
+}
+.card-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Stats cards (admin) ──────────────────────────────── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  border-top: 3px solid var(--deep-sage);
+}
+.stat-card.stat-open {
+  border-top-color: #e8a55b;
+}
+.stat-card.stat-resolved {
+  border-top-color: var(--sage);
+}
+.stat-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.stat-value {
+  display: block;
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--deep-sage);
+}
+
+/* ── Status messages (loading / error / empty) ─────────── */
+.status-msg {
+  padding: 14px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  font-style: italic;
+  display: none;
+}
+.status-msg.visible {
+  display: block;
+}
+.status-msg.error {
+  color: var(--brick);
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* ── Utility ───────────────────────────────────────────── */
+.hidden {
+  display: none !important;
+}

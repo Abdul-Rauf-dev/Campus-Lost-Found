@@ -1,0 +1,92 @@
+{
+  "reports": [
+    {
+      "id": 1,
+      "type": "lost",
+      "title": "Black HP laptop bag",
+      "category": "bags",
+      "description": "Black laptop bag with red zipper. Contains charger.",
+      "location": "Central Library, 2nd floor",
+      "contact": "ahmed@iub.edu.pk",
+      "status": "open",
+      "postedAt": "2026-05-12"
+    },
+    {
+      "id": 2,
+      "type": "found",
+      "title": "USB drive (SanDisk 32GB)",
+      "category": "electronics",
+      "description": "Blue SanDisk USB found near projector.",
+      "location": "Computer Lab 3",
+      "contact": "sara@iub.edu.pk",
+      "status": "open",
+      "postedAt": "2026-05-13"
+    },
+    {
+      "id": 3,
+      "type": "lost",
+      "title": "Student ID card",
+      "category": "cards",
+      "description": "ID card name: Bilal Ahmed, BSCS 4th semester.",
+      "location": "Cafeteria",
+      "contact": "bilal@iub.edu.pk",
+      "status": "resolved",
+      "postedAt": "2026-05-10"
+    },
+    {
+      "id": 4,
+      "type": "found",
+      "title": "Bunch of keys",
+      "category": "keys",
+      "description": "Three keys on a black keychain with a yellow tag.",
+      "location": "Sports Complex entrance",
+      "contact": "hina@iub.edu.pk",
+      "status": "open",
+      "postedAt": "2026-05-14"
+    },
+    {
+      "id": 5,
+      "type": "lost",
+      "title": "Casio scientific calculator",
+      "category": "electronics",
+      "description": "Casio FX-991ES with name 'Usman' written on the back.",
+      "location": "Math Department, Room 204",
+      "contact": "usman@iub.edu.pk",
+      "status": "open",
+      "postedAt": "2026-05-14"
+    },
+    {
+      "id": 6,
+      "type": "found",
+      "title": "Black umbrella",
+      "category": "other",
+      "description": "Compact black umbrella, slightly worn handle.",
+      "location": "Main Gate bus stop",
+      "contact": "nadia@iub.edu.pk",
+      "status": "open",
+      "postedAt": "2026-05-15"
+    },
+    {
+      "id": 7,
+      "type": "lost",
+      "title": "Data Structures textbook",
+      "category": "books",
+      "description": "Cormen 'Introduction to Algorithms', 3rd edition. Highlighted in yellow.",
+      "location": "Library reading hall",
+      "contact": "zain@iub.edu.pk",
+      "status": "open",
+      "postedAt": "2026-05-13"
+    },
+    {
+      "id": 8,
+      "type": "found",
+      "title": "Wireless earbuds case",
+      "category": "electronics",
+      "description": "White earbuds case, no earbuds inside. Slightly scratched.",
+      "location": "Auditorium A",
+      "contact": "ayesha@iub.edu.pk",
+      "status": "resolved",
+      "postedAt": "2026-05-09"
+    }
+  ]
+}

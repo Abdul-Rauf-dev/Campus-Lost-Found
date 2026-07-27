@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Campus Lost &amp; Found</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Admin top bar -->
+  <nav class="topnav topnav-admin">
+    <div class="nav-wrap">
+      <div class="brand">
+        <span class="brand-icon">🛡️</span>
+        <span class="brand-text">Admin Dashboard</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Browse</a>
+        <a href="admin.html" class="active">Admin</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="hero">
+      <h1>Manage Reports</h1>
+      <p>Review submitted reports. Mark items as resolved when returned, or remove invalid posts.</p>
+    </section>
+
+    <!-- Stats strip -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="stat-label">Total</span>
+        <span class="stat-value" id="stat-total">0</span>
+      </div>
+      <div class="stat-card stat-open">
+        <span class="stat-label">Open</span>
+        <span class="stat-value" id="stat-open">0</span>
+      </div>
+      <div class="stat-card stat-resolved">
+        <span class="stat-label">Resolved</span>
+        <span class="stat-value" id="stat-resolved">0</span>
+      </div>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-bar">
+      <div class="filter-group">
+        <button class="chip active"            data-status="all">All</button>
+        <button class="chip chip-open"         data-status="open">Open</button>
+        <button class="chip chip-resolved"     data-status="resolved">Resolved</button>
+      </div>
+    </div>
+
+    <div id="status-msg" class="status-msg"></div>
+    <div id="reports-list" class="reports-grid admin-grid"></div>
+
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
